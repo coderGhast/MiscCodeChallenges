@@ -1,5 +1,5 @@
 var nextVersion = function(input){
-  // Check that a passt part can be converted into a number to be worked with.
+  // Check that a passed part can be converted into a number to be worked with.
   // If not, log it and return empty String.
   function parseVersionPart(part){
     var result = part;
@@ -50,7 +50,7 @@ var nextVersion = function(input){
         var versionParts = input.split(".");
         for(var i = versionParts.length - 1; i >= 0; i--){
           versionParts[i] = parseVersionPart(versionParts[i]);
-          // If we have an empty part, it failed parsing, so return
+          // If we have even one empty part, it failed parsing, so return
           if(versionParts[i] === ""){
             versionLogging.warning("Next Version: A part is empty at index: " + i + " of " + versionParts);
             return "";
